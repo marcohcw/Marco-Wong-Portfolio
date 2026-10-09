@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Marco Wong — Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;600&family=IBM+Plex+Mono&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="masthead">
+      <span>PORTFOLIO — MECHANICAL &amp; ROBOTICS ENGINEERING</span>
+      <span class="links">
+        <a href="mailto:marcowong1015@gmail.com">marcowong1015@gmail.com</a>
+        <a href="https://www.linkedin.com/in/marcowong1/">linkedin.com/in/marcowong1</a>
+      </span>
+    </div>
+    <h1>Marco Wong</h1>
+    <p class="summary">Mechanical engineer specializing in robotics, with a First Class BEng in Mechanical Engineering with minor in robotics from UCL and an ongoing MSc in Human and Biological Robotics at Imperial College London.</p>
+  </div>
+</header>
+
+<!-- Each project: heading + description, photo clusters, then contributions (all full width).
+     Photos: each <div class="row"> is one line of photos, scaled to the same height. -->
+<section class="project" id="console">
+  <div class="wrap">
+    <div class="tag">Sep 2025 – Jun 2026</div>
+    <h2>Development of a Master Console for Robotic-Guided Catheterization</h2>
+    <p class="org">UCL BEng Final Year Project</p>
+    <p class="lede">Designed a 2-DOF control handle that replicates the natural push-pull and rotation of catheterization, replacing the four-joystick console on an existing MR-conditional heart catheterisation robot.</p>
+
+    <div class="cluster">
+      <div class="row">
+        <figure style="--r:2.1164"><img src="images/c-collage.jpg" alt="CAD, prototype and close-up details of the master console"><figcaption>CAD, prototype and details of the master console</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="row">
+        <figure style="--r:2.8498"><img src="images/c-robot.jpg" alt="The existing MR-conditional catheterisation robot"><figcaption>The existing MR-conditional robot (Wang et al., UCL) that the controller is built for</figcaption></figure>
+        <figure style="--r:1.6068"><img src="images/c-catheter.jpg" alt="Swan-Ganz catheter with inflatable balloon tip"><figcaption>The Swan-Ganz catheter it drives, with an inflatable balloon at its tip</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="contrib">
+      <ul>
+        <li>Designed and built the 2-DOF handle: CNC-machined shaft, 3D-printed handle and mounts, and a belt drive that re-centres the handle for unlimited push-pull travel.</li>
+        <li>Integrated dual magnetic encoders to map handle motion into control signals (0.022° rotation resolution).</li>
+        <li>Added an Arduino capacitive grip sensor so commands are only sent while the clinician is holding the handle.</li>
+        <li>Evaluated path-tracking accuracy: root-mean-square error of <b>&lt;2.0 mm</b> across preset reference profiles.</li>
+      </ul>
+      <p class="progress">The console has been validated on the bench. The next step is integrating it with the robot for further functional testing, followed by phantom testing.</p>
+      <a class="report" href="report/Marco-Wong-Master-Console-Final-Report.pdf">Read the final report (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<section class="project" id="ventra">
+  <div class="wrap">
+    <div class="tag">Sep 2023 – Jul 2026</div>
+    <h2>Propulsion Team Lead</h2>
+    <p class="org">UCL Racing — Unmanned Aerial Systems (UAS) Team Nova</p>
+    <p class="lede">Led propulsion sub-team in designing the power and thrust systems for a blended-wing VTOL aircraft, winning the <b>2026 IMechE UAS Challenge Design Award</b>.</p>
+
+    <div class="cluster">
+      <div class="row">
+        <figure style="--r:2.5873"><img src="images/v-collage.jpg" alt="CAD model, flight render and prototype building of Project Ventra"><figcaption>Project Ventra — CAD model (left), flight render and prototype building (right)</figcaption></figure>
+      </div>
+      <div class="mosaic">
+        <figure style="width:71.78%"><img src="images/v-fuselage.jpg" alt="CAD of the fuselage interior"><figcaption>Fuselage CAD — motor, battery and avionics layout</figcaption></figure>
+        <div class="stack" style="width:26.59%">
+          <figure><img src="images/v-mission.jpg" alt="Mission Planner waypoint screen"><figcaption>Mission Planner — waypoints</figcaption></figure>
+          <figure><img src="images/v-flight.jpg" alt="Flight test"><figcaption>Flight testing</figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="row">
+        <figure style="--r:2.5000"><img src="images/v-analysis.jpg" alt="Thrust required versus available, and mission energy budget"><figcaption>Propulsion sizing — thrust required against available, and the mission energy budget</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="contrib">
+      <h3>Individual contributions</h3>
+      <ul>
+        <li>Sized the propulsion system from a take-off ground-roll force balance: <b>63.5 N</b> (7.77 kg with a 20% margin) for a 10 kg aircraft within a 15 m run.</li>
+        <li>Replaced the initial 12S motor with a 6S DualSky XM6352DA (<b>9.3 kg</b> thrust), enabling a single-battery layout and a <b>19%</b> cruise efficiency gain.</li>
+        <li>Modelled the mission energy in Python: <b>25.5%</b> battery remained after a 900 s flight, against a 20% requirement.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="project" id="impeller">
+  <div class="wrap">
+    <div class="tag">Sep 2024 – Feb 2025</div>
+    <h2>Design and Optimization of a Pump Impeller for Ventricular Assist Devices</h2>
+    <p class="lede">Designed a pump impeller for a ventricular assist device, targeting a 0.8 bar pressure head and 75 L/min flow rate while keeping shear stress within safe limits for blood.</p>
+
+    <div class="cluster">
+      <div class="row">
+        <figure style="--r:1.4028"><img src="images/i-drawing.jpg" alt="Impeller CAD drawing"><figcaption>CAD drawing</figcaption></figure>
+        <figure style="--r:1.6364"><img src="images/i-cad.jpg" alt="Impeller CAD model"><figcaption>CAD model</figcaption></figure>
+      </div>
+      <div class="row">
+        <figure style="--r:2.0263"><img src="images/i-spreadsheet.jpg" alt="Impeller design spreadsheet"><figcaption>Design spreadsheet — blade dimensions are optimized to balance the performance parameters, which trade off against each other</figcaption></figure>
+      </div>
+      <div class="row">
+        <figure style="--r:1.1494"><img src="images/i-proto.jpg" alt="3D-printed impeller prototype"><figcaption>3D-printed prototype</figcaption></figure>
+        <figure style="--r:1.6566"><img src="images/i-testbench.jpg" alt="Impeller test rig readout"><figcaption>Impeller test rig</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="contrib">
+      <ul>
+        <li>Optimized the blade geometry — inner and outer radius, height, angle, number of blades and diffuser area — in a design spreadsheet.</li>
+        <li>Set the operating speed and preset physical and estimated parameters to calculate blockage factors, flow rate and pressure rise.</li>
+        <li>Ran CFD at 2,500 RPM to check internal flow patterns and critical shear stresses.</li>
+        <li>Prototyped with 3D printing and tested on an impeller test rig.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Marco Wong · <a href="mailto:marcowong1015@gmail.com">marcowong1015@gmail.com</a> · <a href="https://www.linkedin.com/in/marcowong1/">LinkedIn</a></div>
+</footer>
+
+<script>
+/* Photo layout. (1) Photos in a .row share one height. (2) In a .mosaic, one big photo sits beside a
+   column of smaller photos and the tops and bottoms line up. Swap photos freely: this reads their shapes. */
+(function(){
+  var G=16,HC=27;
+  function ratio(img){return img.naturalWidth/img.naturalHeight}
+  function fitRows(){document.querySelectorAll('.row img').forEach(function(img){
+    var f=img.closest('figure'); if(f&&img.naturalWidth) f.style.setProperty('--r',ratio(img).toFixed(4));});}
+  function fitMosaics(){
+    document.querySelectorAll('.mosaic').forEach(function(m){
+      var big=m.querySelector(':scope > figure'), st=m.querySelector('.stack');
+      var imgs=[].slice.call(m.querySelectorAll('img'));
+      if(imgs.some(function(i){return !i.naturalWidth})) return;
+      if(window.innerWidth<=640){big.style.width='';st.style.width='';return}
+      var W=m.clientWidth, a=1/ratio(big.querySelector('img')), n=0, b=0;
+      st.querySelectorAll('img').forEach(function(i){n++;b+=1/ratio(i)});
+      var wc=((W-G)*a+HC-n*HC-(n-1)*G)/(a+b);
+      st.style.width=wc+'px'; big.style.width=(W-G-wc)+'px';
+    });}
+  function all(){fitRows();fitMosaics()}
+  document.querySelectorAll('img').forEach(function(i){ if(!i.complete) i.addEventListener('load',all)});
+  window.addEventListener('resize',all); all();
+})();
+</script>
+</body>
+</html>

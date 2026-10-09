@@ -1,0 +1,75 @@
+/* Marco Wong portfolio — edit colours/fonts here */
+:root{
+  --paper:#EFEDE6; --ink:#141414; --ink-soft:#3b3b38; --rule:#141414; --line:#cfcabd; --accent:#B4472B; --card:#ffffff;
+  --serif:'Fraunces','Iowan Old Style',Georgia,serif;
+  --sans:'Inter',-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono','SFMono-Regular',Menlo,Consolas,monospace;
+  --gap:16px;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+
+/* ===== Header ===== */
+header.hero{border-bottom:2px solid var(--rule);padding:56px 0 44px}
+.masthead{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 24px;font-family:var(--mono);font-size:12.5px;color:var(--ink);margin-bottom:44px}
+.masthead .links{display:flex;gap:24px;flex-wrap:wrap}
+.masthead a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,8vw,80px);line-height:.98;letter-spacing:-.01em;margin:0 0 20px}
+.summary{font-size:clamp(17px,2.2vw,20px);color:var(--ink);margin:0}
+
+/* ===== Projects: one full-width column ===== */
+section.project{border-bottom:1px solid var(--line);padding:64px 0}
+section.project:last-of-type{border-bottom:2px solid var(--rule)}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4.2vw,44px);line-height:1.06;margin:0 0 12px}
+.org{font-size:17px;color:var(--ink);margin:0 0 4px}
+.lede{font-size:17px;margin:16px 0 32px}
+
+/* ---- Photo rows ----
+   Every photo in a .row ends up the SAME HEIGHT, so tops and bottoms line up.
+   Each <figure> gets --r = its photo's width/height (a small script at the
+   bottom of the page keeps this right, so you can swap photos freely). */
+.row{display:flex;gap:var(--gap);align-items:flex-start;margin:0 0 var(--gap)}
+.row figure{flex:var(--r,1.5) 1 0;min-width:0;margin:0}
+.row img{width:100%;height:auto;background:var(--card);border:1px solid var(--rule)}
+.cluster{margin:0 0 36px}
+.cluster .row:last-child{margin-bottom:0}
+/* Mosaic: one big photo beside a column of smaller ones (tops and bottoms line up) */
+.mosaic{display:flex;gap:var(--gap);align-items:flex-start;margin:0 0 var(--gap)}
+.mosaic .stack{display:flex;flex-direction:column;gap:var(--gap);min-width:0}
+.mosaic figure{margin:0;min-width:0}
+.mosaic img{width:100%;height:auto;background:var(--card);border:1px solid var(--rule)}
+.mosaic figcaption{height:27px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-sizing:border-box}
+.cluster .mosaic:last-child{margin-bottom:0}
+figcaption{font-family:var(--mono);font-size:12px;color:var(--ink-soft);padding-top:9px;line-height:1.45;text-align:center}
+
+/* ===== Contributions: heading directly above the bullets, full width ===== */
+.contrib h3{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px}
+.contrib ul{margin:0;padding-left:20px}
+.contrib li{margin-bottom:8px}
+.contrib b{font-weight:600}
+.progress{margin:16px 0 0}
+
+a.report{display:inline-block;margin-top:18px;font-family:var(--mono);font-size:12.5px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink)}
+
+footer{padding:40px 0 56px;font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)}
+footer a{color:var(--ink)}
+
+@media (max-width:640px){
+  .wrap{padding:0 18px}
+  header.hero{padding:36px 0 30px}
+  .masthead{margin-bottom:30px}
+  section.project{padding:48px 0}
+  .row{flex-direction:column;gap:22px}
+  .row figure{flex:none;width:100%}
+  .mosaic{flex-direction:column;gap:22px}
+  .mosaic>*,.mosaic .stack{width:100%!important}
+  .mosaic figcaption{height:auto;white-space:normal}
+}
